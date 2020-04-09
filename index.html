@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Technical Documentation | FCC</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header id="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/330px-Matlab_Logo.png" alt="MATLAB logo">
+            <p>MATLAB &REG;</p>
+        </header>
+        <ul>
+            <li>
+                <a class="nav-link" href="#introduction">Introduction</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Vecteurs_et_matrices">Vecteurs et matrices</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Boucles_for">Boucles for</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Boucles_while">Boucles while</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#if,else">if,else</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#switch">switch</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Interpolation">Interpolation</a>
+            </li> 
+        </ul>
+
+    </nav>
+     <main id="main-doc">
+         <section id="introduction" class="main-section">
+             <header>Introduction</header>
+             <p>Un script (fichier) MATLAB est composé d’une suite d’instructions, toutes
+                séparées par une virgule ou un point virgule. Comme tout langage, MATLAB
+                possède aussi un certain nombre d’instructions syntaxiques (boucles simples,
+                conditionnelles, etc...)et de commandes élémentaires (lecture, écriture, etc...).
+                Dès que le calcul à effectuer implique un enchaînement de commandes un peu
+                compliqué, il vaut mieux écrire ces dernières dans un fichier. Par convention
+                un fichier contenant des commandes Matlab porte un nom avec le suffixe .m et
+                s’appelle pour cette raison un M-file ou encore script. On utilisera l’éditeur intégré au logiciel qui se lance à partir de la fenêtre de commande en cliquant sur
+                les icônes new M-file ou open file dans la barre de menu. Une fois le fichier
+                enregistré sous un nom valide, on peut exécuter les commandes qu’il contient
+                en tapant son nom dans la fenêtre de commande. Les M-file seront créés dans
+                le réperto
+            <p class="subsection">Exemple</p>
+            <p>Créer dans le répertoire courant un M-file en cliquant sur l’icone New M-file
+                et taper les instructions suivantes : <br>
+                <code>
+                    a = 2;<br>
+                    b = 3;<br>
+                    somme = a + b;<br>
+                </code>
+                apres enregistrer et lancer le script par le bouton Run.
+                </p>
+         </section>
+         <section id="Vecteurs_et_matrices" class="main-section">
+             <header>Vecteurs et matrices</header>
+             <p>
+                Les variables comme a et b vu précédement sont des scalaires. MATLAB utilise
+                aussi les vecteurs et les matrices. <br>
+                Pour définir une matrice, on utilise les symboles ’[ ]’ pour délimiter le début
+                et la fin des éléments, l’espace (ou la virgule ’,’ ) pour séparer les valeurs sur
+                une ligne et le symbole ’ ;’ pour délimiter les lignes. Ainsi la commande :
+                <br><code>
+                    >> A = [1 2 3 ; 4 5 6]
+                </code><br>
+                donne
+                    <pre>>> A = 
+        1 2 3
+        4 5 6</pre>
+                Cette matrice a 2 lignes et 3 colonnes. On peut appeler l’élément de la deuxième
+                ligne et la première colonne par :
+                <pre>>> A(2,1)
+ans =
+        4</pre>
+             </p>
+         </section>
+         <section id="Boucles_for" class="main-section">
+             <header>Boucles for</header>
+             <p>MATLAB permet deux types de boucles, une boucle for (comparable à la
+                boucle Fortran do ou à la boucle C for) et une boucle while. <br>
+                En général, la forme commune de la boucle for est:
+                <code>
+                    <nobr><b>for</b> index = j : k</nobr> 
+                    commandes <br>
+                    <b>end</b>
+                </code>
+                ou
+                <code>
+                    <nobr><b>for</b> index = j : m : k </nobr>
+                    commandes <br>
+                    <b>end</b>
+                </code>
+                tel que
+                <ul>
+                    <li>index : l'indice qui compte le deroulement de la boucle</li>
+                    <li>j : debut de l'intervale</li>
+                    <li>k : fin de l'intervale</li>
+                    <li>m : le pas d'augmentation</li>
+                    <li>commandes : les actions à executer dans chaque iteration</li>
+                </ul>
+                La boucle for est très utiles dans la plupart des applications. Elle répète des
+                intruction pendant que le compteur de la boucle balaie les valeurs rangées dans
+                un vecteur ligne.En MATLAB, il est parfois beaucoup plus efficace d’utiliser les
+                opérateurs algébriques usuels par exemple, le ’ .* ’.
+            </p>
+         </section>
+         <section id="Boucles_while" class="main-section">
+             <header>Boucles while</header>
+             <p>
+                Une boucle while permet de répéter une opération tant qu’une condition n’est
+                pas remplie. <br>
+                <code>
+                    <nobr><b>while</b> condition </nobr>
+                    commandes <br>
+                    <b>end</b>
+                </code><br>
+             </p>
+         </section>
+         <section id="if,else" class="main-section">
+             <header>if,else</header>
+             <p>
+                Ce type de structures de programmation est très utile pour vérifier des conditions. Elles ont la forme générale suivante
+                <code>
+                    <nobr><b>if</b> condition</nobr>
+                    instruction 1.1 <br>
+                    instruction 1.2 <br>
+                    ... <br>
+                    
+                    <nobr><b>elseif</b> condition 2</nobr>
+                    instruction 2.1 <br>
+                    instruction 2.2 <br>
+                    ... <br>
+                    <nobr><b>elseif</b> condition 3</nobr>
+                    instruction 3.1 <br>
+                    instruction 3.2 <br>
+                    ... <br>
+                    ... <br>
+                    <b>else</b>
+                    instruction else.1 <br>
+                    instruction else.2
+                    <b>end</b>
+                </code>
+                où condition 1, condition 2, ... représentent des ensembles d’instructions, dont la
+                valeur est 0 ou 1 (faux ou vrai). La première condition ayant la valeur 1 entraîne
+                l’exécution de l’instruction correspondante. Si toutes les conditions sont fausses,
+                les instructions instruction 1, instruction 2, ... sont exécutées. Si la valeur de
+                condition k est zéro, les instructions instruction k.1, instruction k.2, ... ne sont
+                pas exécutées et l’interpréteur passe à la suite.
+                Les opérateurs logiques utilisés dans les conditions sont : and (&), or (|), not
+                ( ˜ ). Les opérateurs de comparaison sont : supérieur à (>), supérieur ou
+                égal à (>=), inférieur à (<), inférieur ou égal à (<=), égal à (==),
+                différent de (˜=).
+             </p>
+         </section>
+         <section id="switch" class="main-section">
+             <header>switch</header>
+             <p>
+                Les boucles switch permettent parfois de remplacer les boucles if-elseif-else,
+                particulièrement dans le cas de menus. Le prototype de ce type de boucle est le
+                suivant :
+                <code>
+                    <nobr><b>switch</b> (CAS)</nobr> 
+                    <nobr><b>case</b> CAS 1</nobr> 
+                    action 1 <br>
+                    <nobr><b>case</b> CAS 2</nobr> 
+                    action 1 <br>
+                    ... <br>
+                    <nobr><b>Otherwise</b></nobr> 
+                    action 1 <br>
+                    <b>end</b>
+                </code>
+             </p>
+         </section>
+         <section id="Interpolation" class="main-section">
+             <header>Interpolation</header>
+             <p>
+                Dans le domaine de l’analyse numérique des données, on a souvent besoin d’établir un modèle mathématique liant plusieurs séries de données expérimentales.
+                L’interpolation polynomiale consiste à approcher la courbe liant les deux séries
+                de mesures par un polynôme. Les coefficients optimaux de ce polynôme sont
+                ceux qui minimisent la variance de l’erreur d’interpolation. Ce principe (voir
+                plus loin) est connu sous le nom de la méthode des moindres carrés. La fonction
+                polyfit retourne le polynôme de degré n permettant d’approcher la courbe au
+                sens des moindres carrés. <br>
+                L’instruction <code><nobr>c = <b>polyfit</b> ( x , y , n )</nobr> </code>  fournit également les coefficients du
+                polynôme d’interpolation. Soit le code suivant:
+                <code>
+                    x = [ -55 -25 5 35 65 ] ; <br> y = [ -3.25 -3.2 -3.02 -3.32 -3.1 ] ; <br>
+                    <nobr><b>format </b>short e ;</nobr>c = polyfit ( x , y , 4 ) <br>
+                    c = <br>
+                    8.2819e-08 -4.5267e-07 -3.4684e-04 3.7757e-04 -3.0132e+00 <br>
+                </code>
+             </p>
+         </section>
+         <footer> 
+            &copy; BELHANI Med Afif <br>
+            <div><a href="https://freecodecamp.org">FreeCodeCamp.org</a></div>
+        </footer>
+     </main>
+     
+</body>
+</html>
